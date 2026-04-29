@@ -67,8 +67,13 @@ if (@serv) {
 		}
 	print &ui_links_row(\@links);
 	if ($access{'edit'}) {
-		print &ui_form_end([ [ "delete", $text{'index_delete'} ],
-				     [ "refresh", $text{'index_refsel'} ] ]);
+		my @buts = ( [ "delete", $text{'index_delete'} ],
+			     [ "refresh", $text{'index_refsel'} ] );
+		if (!$config{'index_status'}) {
+			push(@buts, [ "disable", $text{'index_disable'} ],
+				    [ "enable", $text{'index_enable'} ]);
+			}
+		print &ui_form_end(\@buts);
 		}
 	}
 else {

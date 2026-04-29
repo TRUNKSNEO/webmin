@@ -50,7 +50,8 @@ print &ui_table_row($text{'sched_warn'},
 		  [ [ 1, $text{'sched_warn1'} ],
 		    [ 0, $text{'sched_warn0'} ],
 		    [ 3, $text{'sched_warn3'} ],
-		    [ 2, $text{'sched_warn2'} ] ]), 3);
+		    [ 2, $text{'sched_warn2'} ],
+		    [ 4, $text{'sched_warn4'} ] ]), 3);
 
 # Send email to
 my $e = $config{'sched_email'};
