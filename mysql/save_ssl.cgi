@@ -12,6 +12,7 @@ foreach my $l (&get_all_mysqld_files()) {
 	}
 $conf = &get_mysql_config();
 ($mysqld) = grep { $_->{'name'} eq 'mysqld' ||
+		   $_->{'name'} eq 'mariadbd' ||
 		   $_->{'name'} eq 'mariadb' } @$conf;
 $mysqld || &error($text{'cnf_emysqld'});
 

@@ -14,6 +14,7 @@ if (!$conf) {
 	exit;
 	}
 ($mysqld) = grep { $_->{'name'} eq 'mysqld' ||
+		   $_->{'name'} eq 'mariadbd' ||
 		   $_->{'name'} eq 'mariadb' } @$conf;
 $mysqld || &error($text{'cnf_emysqld'});
 $mems = $mysqld->{'members'};
